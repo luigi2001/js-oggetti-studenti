@@ -33,18 +33,14 @@ var classe = [
 
 /* input */
 
-var nomeInput = prompt('Inserisci nome nuove studente:');
-var maiuscolaNome = nomeInput.charAt(0).toUpperCase()+ nomeInput.slice(1);
-
-var cognomeInput = prompt('Inserisci il cognome del nuovo studente:');
-var maiuscolaCognome = cognomeInput.charAt(0).toUpperCase()+ cognomeInput.slice(1);
-
+var nomeInput = uppercase(prompt('Inserisci nome nuove studente:'));
+var cognomeInput = uppercase(prompt('Inserisci il cognome del nuovo studente:'));
 var etaInput = parseInt(prompt('Inserisci età nuovo studente:'));
 
 
 var nuovoStudente = {
-    nome : maiuscolaNome,
-    cognome : maiuscolaCognome,
+    nome : nomeInput,
+    cognome : cognomeInput,
     eta : etaInput
 };
 
@@ -54,6 +50,13 @@ for(var i = 0; i < classe.length; i++){
     document.getElementById('classe').innerHTML += ' ' + classe[i].nome + classe[i].cognome;
 }
 
+
+
+/* function */
+
+function uppercase (stringa){
+    return stringa.charAt(0).toUpperCase()+ stringa.slice(1);
+}
 
 
 
